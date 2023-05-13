@@ -22,7 +22,8 @@ const save=async(recipe)=>{
     const recipes=await getAll()
     recipe.id=recipes.length +1;
     recipes.push(recipe);
-    const contents=await fs.writeFile(receipesFilePath,)
+    await fs.writeFile(receipesFilePath,JSON.stringify(recipes))
+    return recipe;
 }
 
-module.exports={getAll}
+module.exports={getAll,save}
