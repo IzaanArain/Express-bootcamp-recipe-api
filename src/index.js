@@ -11,14 +11,17 @@ app.use((req,res,next)=>{
     next()
 })
 
+app.use(express())
+app.use(express.urlencoded({extended:true}))
+
 app.use('/api/v1/receipes',recipeRouter)
 
-// app.get("/",(req,res)=>{
-//     res.send(`<h1>hello world from REST API</h1>`)
-// })
-// app.get("/user/:name",(req,res)=>{
-//     res.send(`<h1>hello world <u>${req.params.name}</u> from REST API </h1>`)
-// })
+app.get("/",(req,res)=>{
+    res.send(`<h1>hello world from REST API</h1>`)
+})
+app.get("/user/:name",(req,res)=>{
+    res.send(`<h1>hello world <u>${req.params.name}</u> from REST API </h1>`)
+})
 
 const port=process.env.PORT || 8080
 
