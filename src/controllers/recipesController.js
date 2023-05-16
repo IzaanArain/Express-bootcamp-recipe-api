@@ -65,5 +65,5 @@ const remove = async (req, res, next) => {
     }
   };
 
-module.exports={getAll,save,update,rem}
+module.exports={getAll,save,update,remove}
 

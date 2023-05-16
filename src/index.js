@@ -1,9 +1,11 @@
 const express=require("express")
 require("dotenv").config()
+const cors=require("cors")
+
 const recipeRouter=require('./routers/recipesRoutes')
-
-
 const app=express()
+
+app.use(cors())
 
 app.use((req,res,next)=>{
     const {method,path}=req
