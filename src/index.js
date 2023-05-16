@@ -11,7 +11,7 @@ app.use((req,res,next)=>{
     next()
 })
 
-app.use(express())
+app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
 app.use('/api/v1/receipes',recipeRouter)
